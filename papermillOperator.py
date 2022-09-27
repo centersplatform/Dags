@@ -10,7 +10,11 @@ default_args = {
 with DAG(
     dag_id='papermill_operator',
     default_args=default_args,
+<<<<<<< HEAD
     start_date=pendulum.datetime(2022, 9, 27, tz="UTC"),
+=======
+    start_date=pendulum.datetime(2022, 9, 26, tz="UTC"),
+>>>>>>> 76442f508fd7e793714220472a2563188ca822fa
     schedule_interval=None,
     catchup=False,
     template_searchpath='/opt/scripts',
