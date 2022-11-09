@@ -22,6 +22,7 @@ with DAG(
 		        ssh_conn_id= 'ssh_default', 
 		        task_id='ssh_submit_task', 
                 command=cmd3,
+                command=cmd4,
 		        dag=dag
     )
 
