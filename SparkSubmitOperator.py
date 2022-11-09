@@ -15,7 +15,7 @@ with DAG(
 
 ) as dag:
     spark_submit_local = SparkSubmitOperator(
-        		application ='/tmp/NTTData-1.0-SNAPSHOT.jar',
+        		application ='tmp/NTTData-1.0-SNAPSHOT.jar',
                 java_class = "org.data_training.App",
 		        conn_id= 'spark_default', 
 		        task_id='spark_submit_task', 
