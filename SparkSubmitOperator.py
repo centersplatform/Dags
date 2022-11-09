@@ -12,6 +12,7 @@ with DAG(
     dag_id='spark_submit_operator',
     default_args=default_args,
     start_date=datetime(2022, 11, 9),
+
 ) as dag:
     spark_submit_local = SparkSubmitOperator(
         		application ='/tmp/NTTData-1.0-SNAPSHOT.jar',
@@ -22,6 +23,5 @@ with DAG(
     )
 
 	
-
 spark_submit_local
     

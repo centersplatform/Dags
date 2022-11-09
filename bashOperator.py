@@ -18,7 +18,7 @@ command = ("spark-submit "
 with DAG(
     dag_id='bash_operator',
     default_args=default_args,
-    start_date=datetime(2022, 9, 26),
+    start_date=datetime(2022, 9, 27),
 ) as dag:
     t2 = BashOperator(task_id='test_bash_operator',bash_command=command, dag=dag)
 
