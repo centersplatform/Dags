@@ -24,6 +24,13 @@ with DAG(
 		        dag=dag
     )
 
+    spark_job = SSHOperator(
+		        ssh_conn_id= 'ssh_default', 
+		        task_id='sshsubmit_task', 
+                command=bash_spark,
+		        dag=dag
+    )
+
 	
-ssh_local
+ssh_local >> spark_job
     
