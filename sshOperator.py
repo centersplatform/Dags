@@ -19,14 +19,14 @@ with DAG(
 ) as dag:
     ssh_local = SSHOperator(
 		        ssh_conn_id= 'ssh_default', 
-		        task_id='sshsubmit_task', 
+		        task_id='ssh_submit_task', 
                 command=cmd3,
 		        dag=dag
     )
 
     spark_job = SSHOperator(
 		        ssh_conn_id= 'ssh_default', 
-		        task_id='sshsubmit_task', 
+		        task_id='spark_job_task', 
                 command=bash_spark,
 		        dag=dag
     )
