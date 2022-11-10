@@ -10,18 +10,19 @@ default_args = {
 }
 bash_spark = """spark-submit --master spark://spark-master-svc:7077 --class org.data_training.App tmp/NTTData-1.0-SNAPSHOT.jar Customers hdfs://192.168.182.17:8020/hive/warehouse/hive/warehouse/ecom.db/customers_dataset/customers_dataset.csv"""
 cmd2='echo $PATH'
-cmd3='kubectl get pods -n spark'
+cmd3='kubectl get pods -n airflow'
 cmd4='pwd'
+submit_job='kubectl exec -it spark-master-0 -n spark -- bash && spark-submit --master spark://spark-master-svc:7077 --class org.data_training.App tmp/NTTData-1.0-SNAPSHOT.jar Customers hdfs://192.168.182.17:8020/hive/warehouse/hive/warehouse/ecom.db/customers_dataset/customers_dataset.csv'
 with DAG(
     dag_id='ssh_operator',
     default_args=default_args,
-    start_date=datetime(2022, 11, 10),
+    start_date=datetime(2022, 11, 9),
 
 ) as dag:
     ssh_local = SSHOperator(
 		        ssh_conn_id= 'ssh_default', 
 		        task_id='ssh_submit_task', 
-                command=cmd3,
+                command=submit_job,
 		        dag=dag
     )
 
