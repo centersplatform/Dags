@@ -22,7 +22,7 @@ with DAG(
     ssh_local = SSHOperator(
 		        ssh_conn_id= 'ssh_default', 
 		        task_id='ssh_submit_task', 
-                command=submit_job,
+                command=cmd3,
 		        dag=dag
     )
 
