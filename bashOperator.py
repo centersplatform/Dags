@@ -14,12 +14,13 @@ spark_master = ("spark://"
 command = ("spark-submit "
             "--master {master} "
             "/tmp/test.py").format(master=spark_master)
+cmd4='pwd'
 
 with DAG(
     dag_id='bash_operator',
     default_args=default_args,
-    start_date=datetime(2022, 9, 27),
+    start_date=datetime(2022, 11, 14),
 ) as dag:
-    t2 = BashOperator(task_id='test_bash_operator',bash_command=command, dag=dag)
+    t2 = BashOperator(task_id='test_bash_operator',bash_command=cmd4, dag=dag)
 
 t2
