@@ -19,7 +19,7 @@ cmd4='pwd'
 with DAG(
     dag_id='bash_operator',
     default_args=default_args,
-    start_date=datetime(2022, 11, 14),
+    start_date=datetime(2022, 11, 15),
 ) as dag:
     t2 = BashOperator(task_id='test_bash_operator',bash_command=cmd4, dag=dag)
 

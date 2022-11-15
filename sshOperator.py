@@ -16,7 +16,7 @@ submit_job='kubectl exec -it spark-master-0 -n spark -- bash && spark-submit --m
 with DAG(
     dag_id='ssh_operator',
     default_args=default_args,
-    start_date=datetime(2022, 11, 14),
+    start_date=datetime(2022, 11, 15),
 
 ) as dag:
     ssh_local = SSHOperator(
