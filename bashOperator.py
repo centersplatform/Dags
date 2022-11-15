@@ -14,7 +14,7 @@ spark_master = ("spark://"
 command = ("spark-submit "
             "--master {master} "
             "/tmp/test.py").format(master=spark_master)
-cmd4='mkdir test-from-airflow'
+cmd4='ls'
 
 with DAG(
     dag_id='bash_operator',
