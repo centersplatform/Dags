@@ -21,6 +21,6 @@ with DAG(
     default_args=default_args,
     start_date=datetime(2022, 11, 15),
 ) as dag:
-    t2 = BashOperator(task_id='test_bash_operator',bash_command=cmd4, dag=dag)
+    t2 = BashOperator(task_id='test_bash_operator',bash_command=command, dag=dag)
 
 t2
