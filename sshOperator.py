@@ -6,7 +6,8 @@ from airflow.providers.ssh.operators.ssh import SSHOperator
 
 
 default_args = {
-    'retries':2
+    'retries':2,
+    'owner': 'hive',
 }
 
 cmd2='echo $PATH'
