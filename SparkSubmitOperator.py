@@ -12,7 +12,7 @@ default_args = {
 with DAG(
     dag_id='spark_submit_operator',
     default_args=default_args,
-    start_date=datetime(2022, 11, 15),
+    start_date=datetime(2022, 11, 16),
 
 ) as dag:
     spark_submit_local = SparkSubmitOperator(

@@ -20,7 +20,7 @@ cmd3='kubectl exec -it spark-master-0 -n spark -- bash ./bin/spark-submit --name
 with DAG(
     dag_id='bash_operator',
     default_args=default_args,
-    start_date=datetime(2022, 11, 15),
+    start_date=datetime(2022, 11, 16),
 ) as dag:
     t2 = BashOperator(task_id='test_bash_operator',bash_command=cmd3, dag=dag)
 
