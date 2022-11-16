@@ -14,13 +14,14 @@ spark_master = ("spark://"
 command = ("spark-submit "
             "--master {master} "
             "/tmp/test.py").format(master=spark_master)
-cmd4='pwd'
+cmd2='ls'
+cmd3='kubectl exec -it spark-master-0 -n spark -- bash ./bin/spark-submit --name spark-pi --class org/data_training/App.scala tmp/NTTData-1.0-SNAPSHOT.jar'
 
 with DAG(
     dag_id='bash_operator',
     default_args=default_args,
     start_date=datetime(2022, 11, 16),
 ) as dag:
-    t2 = BashOperator(task_id='test_bash_operator',bash_command=cmd4, dag=dag)
+    t2 = BashOperator(task_id='test_bash_operator',bash_command=cmd3, dag=dag)
 
 t2
