@@ -5,7 +5,8 @@ from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOpe
 
 
 default_args = {
-    'retries':2
+    'retries':2,
+    'owner': 'spark',
 }
 
 with DAG(

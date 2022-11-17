@@ -6,9 +6,10 @@ from airflow.providers.ssh.operators.ssh import SSHOperator
 
 
 default_args = {
-    'retries':2
+    'retries':2,
+    'owner': 'hive',
 }
-bash_spark = """spark-submit --master spark://spark-master-svc:7077 --class org.data_training.App tmp/NTTData-1.0-SNAPSHOT.jar Customers hdfs://192.168.182.17:8020/hive/warehouse/hive/warehouse/ecom.db/customers_dataset/customers_dataset.csv"""
+
 cmd2='echo $PATH'
 cmd3='kubectl get pods -n airflow'
 cmd4='kubectl exec -it spark-master-0 -n spark  -- '
