@@ -19,7 +19,7 @@ tmp/NTTData-1.0-SNAPSHOT.jar LoadDataToDW --executor-memory 10g --driver-memory 
 with DAG(
     dag_id='ssh_operator',
     default_args=default_args,
-    start_date=datetime(2022, 12, 13),
+    start_date=datetime(2022, 12, 16),
 
 ) as dag:
     ssh_local = SSHOperator(
