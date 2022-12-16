@@ -10,7 +10,7 @@ default_args = {
     'owner': 'hive',
 }
 
-cmd2='echo $PATH'
+cmd2='pwd'
 cmd3='kubectl get pods -n airflow'
 cmd4='kubectl exec -it spark-master-0 -n spark  -- '
 cmd5="""spark-submit --master spark://spark-master-svc:7077 --class org.data_training.App \
@@ -25,7 +25,7 @@ with DAG(
     ssh_local = SSHOperator(
 		        ssh_conn_id= 'ssh_default', 
 		        task_id='ssh_submit_task', 
-                command=cmd4+cmd5,
+                command=cmd2,
 		        dag=dag
     )
 
