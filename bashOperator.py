@@ -14,7 +14,7 @@ spark_master = ("spark://"
 command = ("spark-submit "
             "--master {master} "
             "/tmp/test.py").format(master=spark_master)
-cmd2='ls'
+cmd2='pwd'
 cmd3='kubectl exec -it spark-master-0 -n spark  -- spark-submit --master spark://spark-master-svc:7077 /tmp/test.py'
 
 with DAG(
