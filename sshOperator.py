@@ -30,7 +30,4 @@ with DAG(
     )
 
 
-
-	
 ssh_local 
-    
